@@ -9,12 +9,15 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 import { CalculatorComponent } from './calculator/calculator.component'
 import {MatGridListModule} from "@angular/material/grid-list";
+import { FeedbackComponent } from './feedback/feedback.component';
+import {MatSliderModule} from '@angular/material/slider';
 
 @NgModule({
   declarations: [
     AppComponent,
     TrainingComponent,
-    CalculatorComponent
+    CalculatorComponent,
+    FeedbackComponent
   ],
   imports: [
     BrowserModule,
@@ -22,7 +25,8 @@ import {MatGridListModule} from "@angular/material/grid-list";
     BrowserAnimationsModule,
     MatButtonModule,
     MatSlideToggleModule,
-    MatGridListModule
+    MatGridListModule,
+    MatSliderModule
   ],
   providers: [],
   bootstrap: [AppComponent]

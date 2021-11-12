@@ -1,22 +1,30 @@
 mat-grid-list{
-  rowHeight: 5px;
-
-
+  margin-left: 4px;
+  margin-right: 4px;
+  margin-top: 10px;
 }
-mat-grid-tile {
-  background: lightblue;
-  column-span: revert;
-  row-span: revert;
 
+mat-grid-tile{
+border-radius: 5px;
 }
+
 div {
+ background: lightblue;
   width: 250px;
   text-align: center;
-  margin: auto;
-  border: 5px solid lightskyblue;
-  border-radius: 10px;
-
+  border: solid lightgray;
+  border-radius: 5px;
+  padding: 2px;
 }
 p{
   text-align: center;
+}
+input{
+  margin-top: 10px;
+  width: 220px;
+  height: 40px;
+  border: solid lightgray;
+  border-radius: 5px;
+  padding: 2px;
+
 }
