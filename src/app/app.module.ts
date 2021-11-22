@@ -11,13 +11,23 @@ import { CalculatorComponent } from './calculator/calculator.component'
 import {MatGridListModule} from "@angular/material/grid-list";
 import { FeedbackComponent } from './feedback/feedback.component';
 import {MatSliderModule} from '@angular/material/slider';
+import { ToolbarComponent } from './toolbar/toolbar.component';
+import {MatToolbarModule} from "@angular/material/toolbar";
+import {MatIconModule} from "@angular/material/icon";
+import {MatMenuModule} from "@angular/material/menu";
+import { FormComponent } from './form/form.component';
+import {FormsModule} from "@angular/forms";
+import {MatFormFieldModule} from "@angular/material/form-field";
+import {MatInputModule} from "@angular/material/input";
 
 @NgModule({
   declarations: [
     AppComponent,
     TrainingComponent,
     CalculatorComponent,
-    FeedbackComponent
+    FeedbackComponent,
+    ToolbarComponent,
+    FormComponent
   ],
   imports: [
     BrowserModule,
@@ -26,7 +36,15 @@ import {MatSliderModule} from '@angular/material/slider';
     MatButtonModule,
     MatSlideToggleModule,
     MatGridListModule,
-    MatSliderModule
+    MatSliderModule,
+    MatToolbarModule,
+    MatIconModule,
+    MatMenuModule,
+    FormsModule,
+    MatFormFieldModule,
+    MatInputModule
+
+
   ],
   providers: [],
   bootstrap: [AppComponent]
