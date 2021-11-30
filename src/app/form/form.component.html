@@ -1,6 +1,6 @@
 <form (ngSubmit)="submit()" name="form1" #form1="ngForm">
 
-  <h1>Registration Form!</h1>
+  <h1>Registration Form</h1>
 
   <div class="form-group">
     <label for="firstName">First name:</label>
@@ -90,6 +90,7 @@
     <label><input type="checkbox" required ngModel name=checkbox> I've read and understood the conditions</label>
   </div>
   <button type="submit" ng-model="button" [disabled]="form1.invalid" class="btn btn-default"
-          (click)="submit();form1.reset()">Submit</button>
+          (click)="submit()">Submit
+  </button>
 
 </form>

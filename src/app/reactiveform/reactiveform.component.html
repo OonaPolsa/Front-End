@@ -1,0 +1,85 @@
+<form [formGroup]="profileForm" (ngSubmit)="submit()">
+
+  <h1>Reactive form</h1>
+
+  <div class="form-group">
+    <label for="firstName">First name</label>
+    <input class="form-control" formControlName="firstName" id="firstName" name="firstName" type="text">
+  </div>
+  <div *ngIf="firstName.invalid && (firstName.dirty || firstName.touched) " class="alert alert-danger">
+    <p *ngIf="firstName.hasError ('required')">Enter your first name</p>
+    <p *ngIf="firstName.hasError('minlength')">Minimum 2 character required</p>
+    <p *ngIf="firstName.hasError('pattern')">Name can contain only letters</p>
+  </div>
+
+  <div class="form-group">
+    <label for="lastName">Last name</label>
+    <input type="text" class="form-control" id="lastName" name="lastName" formControlName="lastName">
+  </div>
+  <div *ngIf="lastName.invalid && (lastName.dirty || lastName.touched) " class="alert alert-danger">
+    <p *ngIf="lastName.hasError ('required')">Enter your last name</p>
+    <p *ngIf="lastName.hasError('minlength')">Minimum 2 character required</p>
+    <p *ngIf="lastName.hasError('pattern')">Name can contain only letters</p>
+  </div>
+
+  <div class="form-group">
+    <label for="personId">Person ID</label>
+    <input type="ID" class="form-control" id="personId" name="personId" formControlName="personId">
+
+  </div>
+  <div *ngIf="personId.invalid && (personId.dirty || personId.touched) " class="alert alert-danger">
+    <p *ngIf="personId.hasError ('required')">Enter your personal ID</p>
+    <p *ngIf="personId.hasError('minlength')">Minimum 11 character required</p>
+    <p *ngIf="personId.hasError('pattern')">ID must be valid</p>
+  </div>
+  
+  <div class="form-group">
+    <label for="email">Email</label>
+    <input type="email" class="form-control" id="email" name="email" formControlName="email">
+  </div>
+  <div *ngIf="email.invalid && (email.dirty || email.touched) " class="alert alert-danger">
+    <p *ngIf="email.hasError ('required')">Enter your email</p>
+    <p *ngIf="email.hasError('minlength')">Minimum 5 character required</p>
+    <p *ngIf="email.hasError('pattern')">Email must be valid</p>
+  </div>
+
+  <div class="form-group">
+    <label for="username">User name</label>
+    <input type="user" class="form-control" id="username" name="username" formControlName="username">
+  </div>
+  <div *ngIf="username.invalid && (username.dirty || username.touched)" class="alert alert-danger">
+    <p class="alert alert-danger" *ngIf="username.hasError('required')">Enter your user name</p>
+    <p class="alert alert-danger" *ngIf="username.hasError('minlength')">User name must contain at least 6
+      characters </p>
+  </div>
+
+  <div class="form-group">
+    <label for="password">Password</label>
+    <input type="password" class="form-control" id="password" name="password" formControlName="password">
+  </div>
+  <div *ngIf="password.invalid && (password.dirty || password.touched)" class="alert alert-danger">
+    <p class="alert alert-danger" *ngIf="password.hasError('required')">Enter your password</p>
+    <p class="alert alert-danger" *ngIf="password.hasError('minlength')">Password must be at least 10 characters long
+    </p>
+  </div>
+
+  <div class="form-group">
+    <label for="password2">Confirm password</label>
+    <input type="password" class="form-control" id="password2" name="password2"
+           formControlName="password2" required ngModel pattern="{{password.value}}">
+  </div>
+  <div *ngIf="password2.invalid && (password2.dirty || password2.touched)" class="alert alert-danger">
+    <p class="alert alert-danger" *ngIf="password2.hasError('required')">Passwords don't match</p>
+    <p class="alert alert-danger" *ngIf="password2.hasError('pattern')">Passwords must match</p>
+  </div>
+
+
+  <div class="checkbox">
+    <label><input type="checkbox" required ngModel name=checkbox> I've read and understood the conditions</label>
+  </div>
+  <button type="submit" ng-model="button" [disabled]="profileForm.invalid" class="btn btn-default"
+          (click)="submit()">Submit
+  </button>
+
+</form>
+
