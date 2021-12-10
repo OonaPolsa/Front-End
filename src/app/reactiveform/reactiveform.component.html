@@ -1,4 +1,4 @@
-<form [formGroup]="profileForm" (ngSubmit)="submit()">
+<form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
 
   <h1>Reactive form</h1>
 
@@ -32,7 +32,7 @@
     <p *ngIf="personId.hasError('minlength')">Minimum 11 character required</p>
     <p *ngIf="personId.hasError('pattern')">ID must be valid</p>
   </div>
-  
+
   <div class="form-group">
     <label for="email">Email</label>
     <input type="email" class="form-control" id="email" name="email" formControlName="email">
@@ -75,10 +75,10 @@
 
 
   <div class="checkbox">
-    <label><input type="checkbox" required ngModel name=checkbox> I've read and understood the conditions</label>
+    <label><input type="checkbox" required ngModel name=checkbox> I've read the terms and conditions</label>
   </div>
-  <button type="submit" ng-model="button" [disabled]="profileForm.invalid" class="btn btn-default"
-          (click)="submit()">Submit
+  <button type="submit" ng-model="button" class="btn btn-default"
+          (click)="onSubmit()">Submit
   </button>
 
 </form>

@@ -6,29 +6,41 @@
     <span>My App</span>
     <span class="example-spacer"></span>
   </mat-toolbar>
-
-  <mat-menu #menu = "matMenu">
-    <a routerLink="/calculator" routerLinkActive="active" >
-      <button mat-flat-button>Calculator</button>
-    </a>
-
-    <br>
-    <a routerLink="/feedback" routerLinkActive="active">
-      <button mat-flat-button>Feedback</button>
-    </a>
-
-    <br>
-
-    <a routerLink="/form" routerLinkActive="active">
-      <button mat-flat-button>Template Driven Form</button>
-    </a>
-<br>
-    <a routerLink="/reactiveform" routerLinkActive="active">
-      <button mat-flat-button>Reactive Form</button>
-    </a>
+<div *ngIf="(userEmail$ | async)">{{userEmail$}}
+  <button class="mat-stroked-button" (click)='logOut()'>{{logoutText}}</button>
+</div>
+<div *ngIf="!(userEmail$ | async)">
+  <button class="mat-stroked-button" (click)='login()'>{{loginText}}</button>
+</div>
 
 
+<mat-menu #menu="matMenu">
+  <a routerLink="/calculator" routerLinkActive="active">
+    <button mat-flat-button>Calculator</button>
+  </a>
+  <br>
+  <a routerLink="/feedback" routerLinkActive="active">
+    <button mat-flat-button>Feedback</button>
+  </a>
+  <br>
+  <a routerLink="/form" routerLinkActive="active">
+    <button mat-flat-button>Template Driven Form</button>
+  </a>
+  <br>
+  <a routerLink="/reactiveform" routerLinkActive="active">
+    <button mat-flat-button>Reactive Form</button>
+  </a>
+
+  <br>
+  <a routerLink="/cinema" routerLinkActive="active">
+    <button mat-flat-button>Finnkino</button>
+  </a>
+
+  <br>
+  <a routerLink="/login" routerLinkActive="active">
+    <button mat-flat-button>Login</button>
+  </a>
 
 
-  </mat-menu>
-</p>
+</mat-menu>
+

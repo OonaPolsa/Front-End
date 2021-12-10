@@ -17,11 +17,11 @@ export class ReactiveformComponent implements OnInit {
 
   ngOnInit(): void {
     this.profileForm = new FormGroup({
-      firstName: new FormControl('Maija', [Validators.required, Validators.minLength(2), Validators.pattern('^[a-zA-Z ]*$')]),
-      lastName: new FormControl('Mallikas', [Validators.required, Validators.minLength(2), Validators.pattern('^[a-zA-Z ]*$')]),
-      personId: new FormControl('000000-0000', [Validators.required, Validators.minLength(11)]),
-      email: new FormControl('maijam@gmail.com', [Validators.required, Validators.email]),
-      username: new FormControl('Maija123', [Validators.required, Validators.minLength(6), Validators.pattern('^[a-zA-Z ]*$')]),
+      firstName: new FormControl('', [Validators.required, Validators.minLength(2), Validators.pattern('^[a-zA-Z ]*$')]),
+      lastName: new FormControl('', [Validators.required, Validators.minLength(2), Validators.pattern('^[a-zA-Z ]*$')]),
+      personId: new FormControl('', [Validators.required, Validators.minLength(11)]),
+      email: new FormControl('', [Validators.required, Validators.email]),
+      username: new FormControl('', [Validators.required, Validators.minLength(6), Validators.pattern('^[a-zA-Z ]*$')]),
       password: new FormControl('', [Validators.required, Validators.minLength(10), Validators.pattern('^[a-zA-Z ]*$')]),
       password2: new FormControl('', [Validators.required, Validators.minLength(10), Validators.pattern('^[a-zA-Z ]*$')]),
       termAndConditions: new FormControl('', [Validators.requiredTrue]),
@@ -29,7 +29,7 @@ export class ReactiveformComponent implements OnInit {
     })
   };
 
-  submit() {
+  onSubmit() {
     console.log('profileForm.value: ' + this.profileForm.value);
     console.log('profileForm.value: ' + this.profileForm.value.firstName);
     console.log('profileForm.value: ' + this.profileForm.value.lastName);
@@ -42,13 +42,9 @@ export class ReactiveformComponent implements OnInit {
     console.log('profileForm.value: ' + this.profileForm.valid);
     this.profileForm.reset();
 
-    /*this.profileForm.markAsPristine();
-    this.profileForm.markAsUntouched();*/
     //this.router.navigate(['calculator']);
 
-    /*console.warn('profileForm.value: ' + this.profileForm.value.firstName);
-    console.warn('profileForm.valid: ' + this.profileForm.valid);
-    this.profileForm.reset();*/
+
   }
 
   get firstName() {
