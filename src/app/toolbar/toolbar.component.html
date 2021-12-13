@@ -1,17 +1,16 @@
-<p>
-  <mat-toolbar>
-    <button mat-icon-button class="example-icon" [matMenuTriggerFor]="menu">
-      <mat-icon>menu</mat-icon>
-    </button>
-    <span>My App</span>
-    <span class="example-spacer"></span>
-  </mat-toolbar>
-<div *ngIf="(userEmail$ | async)">{{userEmail$}}
-  <button class="mat-stroked-button" (click)='logOut()'>{{logoutText}}</button>
-</div>
-<div *ngIf="!(userEmail$ | async)">
-  <button class="mat-stroked-button" (click)='login()'>{{loginText}}</button>
-</div>
+<mat-toolbar>
+  <button mat-icon-button class="example-icon" [matMenuTriggerFor]="menu">
+    <mat-icon>menu</mat-icon>
+  </button>
+  <span>FRONT-END</span>
+  <span class="example-spacer"></span>
+  <div *ngIf="(userEmail$ | async)">{{userEmail$ | async}}
+    <button class="mat-stroked-button" (click)='logOut()'>{{logoutText}}</button>
+  </div>
+  <div *ngIf="!(userEmail$ | async)">
+    <button class="mat-stroked-button" (click)='login()'>{{loginText}}</button>
+  </div>
+</mat-toolbar>
 
 
 <mat-menu #menu="matMenu">
@@ -37,8 +36,8 @@
   </a>
 
   <br>
-  <a routerLink="/login" routerLinkActive="active">
-    <button mat-flat-button>Login</button>
+  <a routerLink="/maintenance" routerLinkActive="active">
+    <button mat-flat-button>Maintenance</button>
   </a>
 
 

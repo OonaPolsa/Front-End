@@ -39,7 +39,7 @@ export class LoginComponent implements OnInit {
     console.log("loginComponentilta email ja salasana: " + this.email + this.password)
     this.authService.login(this.email, this.password);
     this.router.navigate(['maintenance']);
-    //this.authService.checkLoggedInUser();
+
   }
 
 }

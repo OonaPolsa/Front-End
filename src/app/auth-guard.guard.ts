@@ -17,17 +17,12 @@ export class AuthGuard implements CanActivate {
   canActivate(
     route: ActivatedRouteSnapshot): Observable<boolean> {
 
-    // jos käyttäjällä on tarvittavat oikeudet, palautetaan true
-    // jos käyttäjällä ei oikeuksia, reititetään login-sivulle
-    // käyttäjän oikeudet tarkistetaan serviceltä
-
     return this.authService.getLoggedInUser().pipe(
       take(1),
       map(authState => Boolean(authState)),
       tap(auth => !auth ? this.router.navigate(['login']) : true)
     )
 
-    //return true;
   }
 
 }

@@ -22,15 +22,13 @@ export class AuthenticationService {
 
   login(email: any, password: any) {
 
-    console.log("" + email + password);
-    return this.afAuth.signInWithEmailAndPassword(email, password)
-      .then((result) => {
-        //email.next(value: T);
-        console.log("" + email + password);
-        this.userEmail.next(email);
-        this.router.navigate(['maintenance']);
+    console.log(email + password);
+    return this.afAuth.signInWithEmailAndPassword(email, password).then((result) => {
+      console.log(email + password);
+      this.userEmail.next(email);
+      this.router.navigate(['maintenance']);
 
-      })
+    })
       .catch((error: any) => {
         console.log(error.message);
         console.log("error ilmoitus: " + email + password);
@@ -39,7 +37,7 @@ export class AuthenticationService {
 
   logOut() {
     return this.afAuth.signOut().then(() => {
-      this.userEmail = new BehaviorSubject<string>('');
+      this.userEmail.next("");
       localStorage.removeItem('user');
       this.router.navigate(['login']);
     })
@@ -47,13 +45,11 @@ export class AuthenticationService {
 
   checkLogedInUser() {
     console.log(this.userEmail + 'tämä tieto tulee palvelun check Logged in user-metodista')
-    //palauttaa kirjautuneen käyttäjän sähköpostin
     return this.userEmail;
 
   }
 
   getLoggedInUser(): any {
-    //funktiota kutsutaan canActivate()-funktiossa
     return this.afAuth.authState;
   }
 

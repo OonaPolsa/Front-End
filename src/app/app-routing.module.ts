@@ -2,7 +2,6 @@ import {NgModule} from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
 import {CalculatorComponent} from "./calculator/calculator.component";
 import {FeedbackComponent} from "./feedback/feedback.component";
-import {ToolbarComponent} from "./toolbar/toolbar.component";
 import {FormComponent} from "./form/form.component";
 import {ReactiveformComponent} from "./reactiveform/reactiveform.component";
 import {CinemaComponent} from "./cinema/cinema.component";
@@ -11,6 +10,7 @@ import {AuthGuard} from "@angular/fire/auth-guard";
 import {MaintenanceComponent} from "./maintenance/maintenance.component";
 
 const routes: Routes = [
+
   {path: 'calculator', component: CalculatorComponent},
   {path: '', redirectTo: '/calculator', pathMatch: 'full'},
 
@@ -27,9 +27,8 @@ const routes: Routes = [
   {path: '', redirectTo: '/cinema', pathMatch: 'full'},
 
   {path: 'login', component: LoginComponent},
-  {path: '', redirectTo: '/login', pathMatch: 'full'},
+  {path: 'login', component: MaintenanceComponent, canActivate: [AuthGuard]}
 
-  {path: 'admin/main', component: MaintenanceComponent, canActivate: [AuthGuard]},
 ];
 
 @NgModule({

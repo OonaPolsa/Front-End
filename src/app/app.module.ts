@@ -30,6 +30,7 @@ import {AngularFirestoreModule} from "@angular/fire/compat/firestore";
 import {AngularFireAuthModule} from "@angular/fire/compat/auth";
 import {AngularFireModule} from "@angular/fire/compat";
 import {environment} from "../environments/environment";
+import {MatListModule, MatNavList} from "@angular/material/list";
 
 @NgModule({
   declarations: [
@@ -43,7 +44,8 @@ import {environment} from "../environments/environment";
     CinemaComponent,
     NewsFilterPipe,
     LoginComponent,
-    MaintenanceComponent
+    MaintenanceComponent,
+   
   ],
   imports: [
     BrowserModule,
