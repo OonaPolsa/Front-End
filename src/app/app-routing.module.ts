@@ -8,6 +8,7 @@ import {CinemaComponent} from "./cinema/cinema.component";
 import {LoginComponent} from "./login/login.component";
 import {AuthGuard} from "@angular/fire/auth-guard";
 import {MaintenanceComponent} from "./maintenance/maintenance.component";
+import {TenttiComponent} from "./tentti/tentti.component";
 
 const routes: Routes = [
 
@@ -27,7 +28,11 @@ const routes: Routes = [
   {path: '', redirectTo: '/cinema', pathMatch: 'full'},
 
   {path: 'login', component: LoginComponent},
-  {path: 'login', component: MaintenanceComponent, canActivate: [AuthGuard]}
+
+  {path: 'maintenance', component: MaintenanceComponent, canActivate: [AuthGuard], data: {target: ['main']}},
+
+  //{path: 'tentti', component: TenttiComponent},
+  //{path: '', redirectTo: '/tentti', pathMatch: 'full'}
 
 ];
 

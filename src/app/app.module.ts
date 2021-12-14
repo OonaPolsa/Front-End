@@ -31,6 +31,7 @@ import {AngularFireAuthModule} from "@angular/fire/compat/auth";
 import {AngularFireModule} from "@angular/fire/compat";
 import {environment} from "../environments/environment";
 import {MatListModule, MatNavList} from "@angular/material/list";
+import { TenttiComponent } from './tentti/tentti.component';
 
 @NgModule({
   declarations: [
@@ -45,6 +46,7 @@ import {MatListModule, MatNavList} from "@angular/material/list";
     NewsFilterPipe,
     LoginComponent,
     MaintenanceComponent,
+    TenttiComponent,
    
   ],
   imports: [
